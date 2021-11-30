@@ -1,98 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <script src="./js.js"></script>
-  </head>
-  <body>
-    <div class="main">
-      <h1>Web Application</h1>
-      <div class="content">
-        <h3>Welcome to QAI DE class</h3>
-        <div class="form">
-          <div class="nameBlock" id="result"></div>
-          <div class="file btn btn-sm btn-primary">
-            Choose File
-            <input type="file" name="file" id="upload" />
-          </div>
+</head>
+<style>
+    .container{
+        margin: 20px;
+        width: 100%;
+        height: 100vh;
+    }
+    .title{
+        margin-bottom: 50px;
+    }
+    .form{
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .form__button{
+        height: 100%;
+        margin-left: 30px;
+    }
+    .form__input{
+        margin-right: 100px;
+    }
+    .info{
+        display: grid;
+        grid-template-columns: repeat(3,minmax(0, 1fr));
+    }
+    input[type="file"] {
+    display: none;
+    }
+
+    .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    }
+
+    .form__button{
+        height: 38px;
+    }
+
+    .name__file{
+        display: block;
+        width: 500px;
+        height: 38px;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+    .wrap{
+        display: block;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <h1 class="title">Welcome to QAL DE Class</h1>
+        <form action="" method="POST" id="form-1">
+            <div class="form">
+                <div id="name__file" class="name__file"></div>
+                <div class="form-group">
+                    <input id="inputName"type="file" class="form-control form__input">
+                </div>
+                <label for="inputName" type="submit" class="form__button btn btn-primary">
+                    Choose file
+                </label>
+            </div>
+
+            <div class="wrap">
+                <button type="submit" class="btn btn-primary form__button">Upload to S3</button>
+				<script src="create-bucket.js"></script>
+            </div>
+
+        </form>
+
+        <div class="info">
+            <div class="info__item">
+                <h3>Our Resource Center</h3>
+                <ul class="info__item-list">
+                    <li><a href="">About FPT Software</a></li>
+                    <li><a href="">Why FPT Software ?</a></li>
+                    <li><a href="">Our Campus</a></li>
+                    <li><a href="">Our Partner Network</a></li>
+                    <li><a href="">Broad Of Management</a></li>
+                    <li><a href="">Global Precense</a></li>
+                </ul>
+            </div>
+            <div class="info__item">
+                <h3>About Us</h3>
+                <ul class="info__item-list">
+                    <li><a href="">Innovation Hubcase</a></li>
+                    <li><a href="">StudiesWhitepapers</a></li>
+                </ul>
+            </div>
+
+            <div class="info__item">
+                <h3>Industries</h3>
+                <ul class="info__item-list">
+                    <li><a href="">Aviation</a></li>
+                    <li><a href="">Automotive</a></li>
+                    <li><a href="">Banking And Finance</a></li>
+                    <li><a href="">Media & Entertaiment</a></li>
+                    <li><a href="">Healthcare</a></li>
+                    <li><a href="">Logistics</a></li>
+                    <li><a href="">Manufacturing</a></li>
+                </ul>
+            </div>
+
         </div>
-        <div class="file btn btn-sm btn-primary mt-3" id="uploadS3">
-          Upload to S3
-          <input type="file" name="file" />
-        </div>
-        <div class="footer">
-          <ul class="list_footer">
-            <i class="item_footer">
-              <a href="" class="list_link active">About Us</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link">About FPt Software </a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link"> Why Fpt Software2</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link"> Our Campus</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link"> Our Partner Network</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link"> Board Of Management</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link"> Global Presence</a>
-            </i>
-          </ul>
-          <ul class="list_footer">
-            <i class="item_footer">
-              <a href="" class="list_link active">Our Resource Center</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link">Innovation HubCase</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link">StudiesWhitepaper</a>
-            </i>
-          </ul>
-          <ul class="list_footer">
-            <i class="item_footer">
-              <a href="" class="list_link active">Industries</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link">Aviation </a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link"> Automotive</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link"> Banking and Finance</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link">Media & Entertainment</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link">Healthcare</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link">Logistics</a>
-            </i>
-            <i class="item_footer">
-              <a href="" class="list_link">Manufacturing</a>
-            </i>
-          </ul>
-        </div>
-      </div>
+        
+        <script>
+            function handleUpdate(){
+                const AWS = require('aws-sdk');
+				const BUCKET_NAME = 's3-quytd-final-aws';
+				const s3 = new AWS.S3();
+				const params = {
+					Bucket: BUCKET_NAME,
+					CreateBucketConfiguration: {
+						// Set your region here
+						LocationConstraint: "us-west-2"
+					}
+				};
+				const fs = require('fs');
+				const uploadFile = (fileName) => {
+					// Read content from the file
+					const fileContent = fs.readFileSync(fileName);
+
+					// Setting up S3 upload parameters
+					const params = {
+						Bucket: BUCKET_NAME,
+						Key: 'cho.jpeg', // File name you want to save as in S3
+						Body: fileContent
+					};
+
+					// Uploading files to the bucket
+					s3.upload(params, function(err, data) {
+						if (err) {
+							throw err;
+						}
+						console.log(`File uploaded successfully. ${data.Location}`);
+					});
+				};
+				uploadFile('meo.jpeg');
+            }
+			const selectedFile = document.getElementById('inputName').files[0];
+			const inputElement = document.getElementById("inputName");
+			inputElement.addEventListener("change", handleFiles, false);
+			<!-- function handleFiles() { -->
+				<!-- const fileList = this.files; /* now you can work with the file list */ -->
+				<!-- var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(storageObj)); -->
+				<!-- var dlAnchorElem = document.getElementById('inputName'); -->
+				<!-- dlAnchorElem.setAttribute("href",     dataStr     ); -->
+				<!-- dlAnchorElem.setAttribute("download", "scene.json"); -->
+				<!-- dlAnchorElem.click(); -->
+			<!-- } -->
+			
+            var formElm = document.getElementById("form-1");
+            var formInput = document.getElementById("inputName");
+            var nameFile = document.getElementById("name__file");
+            if(formElm){
+                formElm.onsubmit = e => {
+                    e.preventDefault();
+                    nameFile.innerText=formInput.value;
+                    console.log(formInput.value)
+                }
+            }
+
+        
+
+            
+
+
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </div>
-  </body>
+</body>
 </html>
